@@ -17,7 +17,7 @@ export default function GithubSettings({ close }: { close: () => void }) {
     }
 
     return (
-        <span className='flex px-2 w-full font-semibold items-center justify-center hover:bg-dark-accent-highlight pt-8 pb-8 rounded'>
+        <span className='flex px-2 w-full font-semibold items-center justify-center hover:bg-dark-accent-highlight transition-colors duration-200 pt-8 pb-8 rounded'>
             <Input onChange={(e) => {
                 setReadOnly(false)
                 setToken(e)
@@ -27,9 +27,8 @@ export default function GithubSettings({ close }: { close: () => void }) {
                 label="Github Access Token"
                 clearable={true}
                 readOnly={readOnly}
-                required={true}
             />
-            <Check onClick={saveToken} style="ml-4 pt-10" />
+            <Check onClick={saveToken} style="ml-4" />
         </span>
     )
 }

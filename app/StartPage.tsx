@@ -4,7 +4,7 @@ export default function StartPage() {
   return (
     <>
       <div
-        className="inline-block rounded-md bg-dark-accent mt-40 ml-10 p-6">
+        className="inline-block rounded bg-dark-accent mt-40 hover:bg-dark-accent-highlight transition-colors duration-200 ml-10 p-6">
         <h5
           className="mb-2 text-2xl font-semibold font-roboto leading-tight">
           Code Review
@@ -16,13 +16,13 @@ export default function StartPage() {
         </p>
         <button
           type="button"
-          className="relative rounded cursor-pointer bg-dark-primary px-6 pb-2 pt-2.5 font-semibold leading-normal text-dark-surface"
+          className="relative active:scale-125 transition-transform rounded cursor-pointer bg-dark-primary px-6 pb-2 pt-2.5 font-semibold leading-normal text-dark-surface"
         >
           Start
         </button>
       </div>
       <div
-        className="inline-block rounded-md bg-dark-accent mt-40 ml-10 p-6">
+        className="inline-block rounded bg-dark-accent hover:bg-dark-accent-highlight transition-colors duration-200 mt-40 ml-10 p-6">
         <h5
           className="mb-2 text-2xl font-semibold font-roboto leading-tight">
           Setting up
@@ -32,7 +32,7 @@ export default function StartPage() {
         </p>
         <button
           type="button"
-          className="relative rounded cursor-pointer bg-dark-primary px-6 pb-2 pt-2.5 font-semibold leading-normal z-10000 text-dark-surface"
+          className="relative active:scale-125 transition-transform rounded cursor-pointer bg-dark-primary px-6 pb-2 pt-2.5 font-semibold leading-normal z-10000 text-dark-surface"
         >
           Details
         </button>

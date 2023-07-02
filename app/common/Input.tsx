@@ -17,8 +17,8 @@ export default function Input(props: InputProps) {
 
     return (
         <div>
-            <span className={`text-error-color ${error === '' ? '' : "bg-[#5c2723]"}
-             flex min-h-[2rem] rounded-md text-center justify-center mb-1`}>{error === '' ? <></> : error}</span>
+            {required && <span className={`text-error-color ${error === '' ? '' : "bg-[#5c2723]"}
+             flex min-h-[2rem] rounded-md text-center justify-center mb-1`}>{error === '' ? <></> : error}</span>}
             <label> {label}
                 <input
                     type={type}
