@@ -1,0 +1,116 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end: #1c1b1f;
+  --background-start: #1c1b1f;
+  --dark-accent: #633B48;
+  --dark-accent-highlight: #7d4c5c;
+  --dark-primary: #FFD8E4;
+  --dark-surface: #110f17;
+  --dark-on-surface: #E6E1E5;
+  --dark-secondary: #2a2830;
+  --primary-accent: #D0BCFF;
+  --error-color: #fc8274;
+  --tooltip-scale: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start: #1c1b1f;
+    --background-end: #1c1b1f;
+  }
+}
+
+body {
+  color: var(--dark-primary);
+  background: linear-gradient(to bottom,
+      transparent,
+      var(--background-end)) var(--background-start);
+}
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 3rem;
+  background-color: var(--dark-accent);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  border: 0.5em 0.5em 0.5em 0.5em !important;
+  border-radius: 10px;
+}
+
+.settings {
+  position: fixed;
+  right: 0.8em;
+  top: 0.8em;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.tooltip:hover .message {
+  position: relative;
+  --tooltip-scale: 1;
+  background-color: var(--dark-primary);
+  color: var(--dark-surface);
+  padding: 0.5em;
+  width: max-content;
+  max-width: 100%;
+  text-align: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.text-treat {
+  white-space: nowrap
+}
+
+.rounded {
+  border-radius: 0.5em;
+}
+
+.message {
+  scale: var(--tooltip-scale);
+}
+
+.message::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  left: 100%;
+  margin-left: -2px;
+  border-width: 7px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--dark-primary);
+}
+
+.left-block {
+  flex: 2;
+  height: 100%;
+  background-color: transparent;
+  color: transparent;
+}
+
+.settings-right-block {
+  flex: 1;
+  background-color: var(--dark-accent);
+  height: 100%;
+}
+
+.quick-view-content {
+  padding-left: 20px;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.quick-view-header {
+  font-size: 16px;
+  padding-bottom: 10px;
+}
