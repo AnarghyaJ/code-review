@@ -1,9 +1,9 @@
 "use client";
 import React from 'react'
 import { Octokit, App } from "octokit";
-import { Constants } from '../utils/Constants';
+import { Constants } from '../../utils/Constants';
 import UserDetails from '../repos/UserDetails';
-import { useStore } from '../store/Store';
+import { useStore } from '../../store/Store';
 import Repositories from '../repos/Repositories';
 import { useWizard } from 'react-use-wizard';
 

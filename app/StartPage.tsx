@@ -2,16 +2,16 @@ import React from 'react'
 
 export default function StartPage() {
   return (
-    <>
+    <div className='flex ml-10'>
       <div
-        className="inline-block rounded bg-dark-accent mt-40 hover:bg-dark-accent-highlight transition-colors duration-200 ml-10 p-6">
+        className="inline-block z-10 h-60 rounded bg-dark-accent mt-40 hover:bg-dark-accent-highlight transition-colors duration-200 ml-10 p-6">
         <h5
           className="mb-2 text-2xl font-semibold font-roboto leading-tight">
           Code Review
         </h5>
         <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200 font-roboto">
           A tool that helps you to review code faster. <br />
-          Integrates with Github using user's access token. <br />
+          Integrates with Github using user&apos;s access token. <br />
           Uses LLM to review code and provide suggestions.
         </p>
         <button
@@ -22,7 +22,7 @@ export default function StartPage() {
         </button>
       </div>
       <div
-        className="inline-block rounded bg-dark-accent hover:bg-dark-accent-highlight transition-colors duration-200 mt-40 ml-10 p-6">
+        className="inline-block z-10 h-60 rounded bg-dark-accent hover:bg-dark-accent-highlight transition-colors duration-200 mt-40 ml-10 p-6">
         <h5
           className="mb-2 text-2xl font-semibold font-roboto leading-tight">
           Setting up
@@ -37,6 +37,6 @@ export default function StartPage() {
           Details
         </button>
       </div>
-    </>
+    </div>
   )
 }

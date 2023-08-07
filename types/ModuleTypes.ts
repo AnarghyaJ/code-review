@@ -63,6 +63,7 @@ export type StoreType = {
     languages: [],
     theme: string,
     persistence: [],
+    selectedPage: string,
     security: [],
     token: string,
 }

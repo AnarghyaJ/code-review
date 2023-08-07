@@ -1,5 +1,5 @@
 import React from 'react'
-import { Column, ColumnType, MatchPolicy, TableProps } from '../types/ModuleTypes';
+import { Column, ColumnType, MatchPolicy, TableProps } from '../../types/ModuleTypes';
 
 export const filterModel = (headers: Array<Column>) => {
     const model = headers.map((header: Column) => {
@@ -44,14 +44,14 @@ export default function Table(props: TableProps) {
             <table className='table-auto'>
                 <thead>
                     {headers.map((header: Column) => {
-                        return <th>{header.label}</th>
+                        return <th key={header.label}>{header.label}</th>
                     })}
                 </thead>
                 <tbody>
                     {rows.map((row: any) => {
-                        return <tr>
+                        return <tr key={row.name}>
                             {headers.map((header: Column) => {
-                                return <td>{row[header.name]}</td>
+                                return <td key={row[header.name]}>{row[header.name]}</td>
                             })}
                         </tr>
                     }

@@ -2,8 +2,8 @@
 import React, { useEffect } from 'react'
 import Check from './common/Check'
 import Input from './common/Input'
-import { useStore } from './store/Store';
-import { Constants } from './utils/Constants'
+import { useStore } from '../store/Store';
+import { Constants } from '../utils/Constants'
 
 export default function GithubSettings({ close }: { close: () => void }) {
     const [token, setToken] = React.useState<string>('')

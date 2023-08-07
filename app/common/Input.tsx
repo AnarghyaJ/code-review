@@ -1,7 +1,7 @@
 "use client";
 import React, { use, useEffect } from 'react'
 import Image from 'next/image';
-import { InputProps } from '../types/ModuleTypes';
+import { InputProps } from '../../types/ModuleTypes';
 
 
 export default function Input(props: InputProps) {

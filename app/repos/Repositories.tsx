@@ -1,6 +1,6 @@
 import React from 'react';
 import Table from '../common/Table';
-import { Repository, Column, ColumnType } from '../types/ModuleTypes';
+import { Repository, Column, ColumnType } from '../../types/ModuleTypes';
 
 const getHeaders = () => {
     const columns: Array<Column> = [

@@ -3,7 +3,7 @@ import React, { use, useCallback, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import Image from 'next/image'
 import GithubSettings from './GithubSettings';
-import { useStore } from './store/Store';
+import { useStore } from '../store/Store';
 import UserDefinedPrompt from './UserDefinedPrompt';
 export default function Settings(prop: any) {
     const [click, setClicked] = useState<string>('opacity-0');
@@ -37,7 +37,7 @@ export default function Settings(prop: any) {
             <CSSTransition classNames='settings-panel' in={click !== 'none'} timeout={200}>
                 <div className={`h-full w-full absolute top-0 left-0 flex overflow-hidden`}>
                     <div className="left-block" onClick={handleOutsideClick}></div>
-                    <div className={`h-auto mt-14 flex-1 bg-dark-accent rounded
+                    <div className={`h-auto mt-14 flex-1 bg-dark-secondary rounded
                      ${click}`}>
                         <div className='w-full '>
                             <form className='flex flex-col mt-16'>

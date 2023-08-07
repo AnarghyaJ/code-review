@@ -2,7 +2,7 @@
 import React from 'react'
 import { Wizard } from 'react-use-wizard';
 import { AnimatePresence } from 'framer-motion';
-import { WizardStep } from '../types/ModuleTypes';
+import { WizardStep } from '../../types/ModuleTypes';
 import Image from 'next/image';
 
 export default function WizardWrapper({ steps }: { steps: Array<WizardStep> }): JSX.Element {
@@ -11,7 +11,7 @@ export default function WizardWrapper({ steps }: { steps: Array<WizardStep> }): 
             header={<WizardHeader steps={steps} />}
             wrapper={<AnimatePresence initial={false} mode='wait' />}>
             {steps.map((step: WizardStep) => {
-                return <div>
+                return <div key={step.name}>
                     {step.component}
                 </div>
             })}

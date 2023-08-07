@@ -1,7 +1,7 @@
 "use client";
 //Refs only work in client side code. Also this interactivity is better served at client.
 import React, { useCallback } from 'react'
-import { TooltipProps } from '../types/ModuleTypes';
+import { TooltipProps } from '../../types/ModuleTypes';
 
 export const Tooltip: React.FC<TooltipProps> = (props) => {
     const { children, content, position = "left", className } = props;

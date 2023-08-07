@@ -1,10 +1,10 @@
 "use client";
 import React from 'react'
 import SelectRepo from './wizard/SelectRepo'
-import { WizardStep } from './types/ModuleTypes'
+import { WizardStep } from '../types/ModuleTypes'
 import SelectPullRequest from './wizard/SelectPullRequest'
 import WizardWrapper from './common/WizardWrapper'
-import { useStore } from './store/Store'
+import { useStore } from '../store/Store'
 const steps: Array<WizardStep> = [
     {
         name: 'Select Repository',
