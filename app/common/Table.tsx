@@ -40,18 +40,18 @@ export default function Table(props: TableProps) {
     const { headers, rows, find, filter, rowSelection = 'none' } = props
 
     return (
-        <div>
-            <table className='table-auto'>
-                <thead>
+        <div className='relative overflow-x-auto shadow-md sm:rounded-lg'>
+            <table className='w-full text-sm text-left p-2 table-auto'>
+                <thead className='uppercase font-semibold'>
                     {headers.map((header: Column) => {
-                        return <th key={header.label}>{header.label}</th>
+                        return <th scope="col" className="bg-dark-accent px-6 py-3" key={header.label}>{header.label}</th>
                     })}
                 </thead>
                 <tbody>
                     {rows.map((row: any) => {
                         return <tr key={row.name}>
                             {headers.map((header: Column) => {
-                                return <td key={row[header.name]}>{row[header.name]}</td>
+                                return <td key={row[header.name]} className="px-4 py-1 hover:bg-secondary-accent">{row[header.name]}</td>
                             })}
                         </tr>
                     }

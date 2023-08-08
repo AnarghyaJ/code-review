@@ -23,6 +23,7 @@ module.exports = {
         "primary-accent": "var(--primary-accent)",
         "dark-accent-highlight": "var(--dark-accent-highlight)",
         "error-color": "var(--error-color)",
+        "secondary-accent": "var(--secondary-accent)",
       },
       transitionProperty: {
         width: 'width',

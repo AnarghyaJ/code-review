@@ -17,7 +17,7 @@ export default function NavBarPage({ index, page }: { index: number, page: strin
 
     return (
         <div key={index} className={`p-3 cursor-pointer rounded-lg transition-colors
-        duration-150 hover:bg-[#5d5475] ${selectedPage === page && 'bg-[#5d5475]'}`}
+        duration-150 hover:bg-secondary-accent ${selectedPage === page && 'bg-secondary-accent'}`}
             onClick={() => handlePageClick(page)}>
             <Image src={`/${page}.svg`}
                 alt={page}

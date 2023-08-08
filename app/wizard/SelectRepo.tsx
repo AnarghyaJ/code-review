@@ -6,6 +6,7 @@ import UserDetails from '../repos/UserDetails';
 import { useStore } from '../../store/Store';
 import Repositories from '../repos/Repositories';
 import { useWizard } from 'react-use-wizard';
+import Loader from '../common/Loader';
 
 export default function SelectRepo() {
     const [user, setUser] = React.useState<string>('')
@@ -55,9 +56,10 @@ export default function SelectRepo() {
 
     return (
         <div className="">
+            {loading && <Loader />}
             {error && <div className='bg-error-color p-4 rounded m-4 w-max'><span className=" text-dark-secondary">{error}</span></div>}
             {user.length > 0 && <UserDetails user={user} />}
-            <Repositories repositories={repositories} />
+            {error ? <></> : <Repositories repositories={repositories} />}
         </div>
     )
 }

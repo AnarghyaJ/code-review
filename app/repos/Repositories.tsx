@@ -15,31 +15,18 @@ const getHeaders = () => {
             type: ColumnType.TEXT
         },
         {
-            name: 'url',
-            label: 'URL',
-            type: ColumnType.TEXT
-        },
-        {
             name: 'visibility',
             label: 'Visibility',
             type: ColumnType.MULTIVALUE
         },
-        {
-            name: 'owner',
-            label: 'Owner',
-            type: ColumnType.TEXT
-
-        }
     ]
     return columns
 }
 
 
 export default function Repositories({ repositories }: { repositories: Array<Repository> }) {
-    const [columns, setColumns] = React.useState<Array<Column>>([])
-    setColumns(getHeaders())
     return (
-        <Table headers={columns}
+        <Table headers={getHeaders()}
             rows={repositories}
             rowSelection='single'
             find={true} />

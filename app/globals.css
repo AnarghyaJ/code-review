@@ -16,6 +16,7 @@
   --primary-accent: #D0BCFF;
   --error-color: #fc8274;
   --tooltip-scale: 0;
+  --secondary-accent: #5d5475;
 }
 
 @media (prefers-color-scheme: dark) {
