@@ -1,5 +1,5 @@
 "use client";
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Octokit, App } from "octokit";
 import { Constants } from '../../utils/Constants';
 import UserDetails from '../repos/UserDetails';
@@ -13,13 +13,14 @@ export default function SelectRepo() {
     const [error, setError] = React.useState<string>('');
     const [loading, setLoading] = React.useState<boolean>(false);
     const token = useStore((state) => state.token);
-    
+
     React.useEffect(() => {
         getDetails();
-    }, [])
+    }, [token])
 
     const getDetails = async () => {
         setLoading(true);
+        setError('')
         try {
             if (!token || token === '') {
                 setError('Please set a valid token!');
@@ -54,9 +55,9 @@ export default function SelectRepo() {
 
     return (
         <div className="">
-            {error && <span className="text-error-color">{error}</span>}
+            {error && <div className='bg-error-color p-4 rounded m-4 w-max'><span className=" text-dark-secondary">{error}</span></div>}
             {user.length > 0 && <UserDetails user={user} />}
-            {/* <Repositories repositories={repositories} /> */}
+            <Repositories repositories={repositories} />
         </div>
     )
 }

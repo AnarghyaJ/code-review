@@ -2,9 +2,6 @@ import _ from 'lodash';
 import { useStore } from '../store/Store';
 import StoreInitializer from '../store/StoreInitializer';
 import { RequestHandler } from '../utils/RequestHandler';
-import NavBar from './NavBar';
-import Header from './common/Header';
-import PageContent from './PageContent';
 
 async function codeCompletion() {
   const response = await RequestHandler.getCompletion('Write a java program to get nth fibonacci number', 'gpt-3.5-turbo')

@@ -1,5 +1,7 @@
-import React from 'react'
+"use client";
 
+import React from 'react'
+import { useStore } from '../../store/Store';
 export default function Page() {
     return (
         <div className='flex ml-10'>
@@ -16,6 +18,9 @@ export default function Page() {
                 </p>
                 <button
                     type="button"
+                    onClick={() => {
+                        useStore.setState({ selectedPage: 'new' })
+                    }}
                     className="relative active:scale-125 transition-transform rounded cursor-pointer bg-dark-primary px-6 pb-2 pt-2.5 font-semibold leading-normal text-dark-surface"
                 >
                     Start
@@ -32,6 +37,9 @@ export default function Page() {
                 </p>
                 <button
                     type="button"
+                    onClick={() => {
+                        useStore.setState({ selectedPage: 'docs/settingup' })
+                    }}
                     className="relative active:scale-125 transition-transform rounded cursor-pointer bg-dark-primary px-6 pb-2 pt-2.5 font-semibold leading-normal z-10000 text-dark-surface"
                 >
                     Details

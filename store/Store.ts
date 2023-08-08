@@ -6,7 +6,7 @@ export const useStore = create<StoreType>((set) => ({
     buildEnvironMent: [],
     settings: false,
     languages: [],
-    selectedPage: 'Home',
+    selectedPage: 'home',
     theme: 'dark',
     persistence: [],
     security: [],

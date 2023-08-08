@@ -1,7 +1,7 @@
 import NavBarPage from './navbar/NavBarPage';
 
 export default function NavBar() {
-  const allPages = ['Home', 'Reviews']
+  const allPages = ['home', 'reviews']
   return (
     <div className='h-screen  bg-dark-secondary w-1/24 z-20'>
       {

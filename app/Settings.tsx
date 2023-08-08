@@ -37,8 +37,8 @@ export default function Settings(prop: any) {
             <CSSTransition classNames='settings-panel' in={click !== 'none'} timeout={200}>
                 <div className={`h-full w-full absolute top-0 left-0 flex overflow-hidden`}>
                     <div className="left-block" onClick={handleOutsideClick}></div>
-                    <div className={`h-auto mt-14 flex-1 bg-dark-secondary rounded
-                     ${click}`}>
+                    <div className={`h-auto mt-14 shadow-sm flex-1 shadow-gray-600 bg-dark-secondary rounded
+                ${click}`}>
                         <div className='w-full '>
                             <form className='flex flex-col mt-16'>
                                 <GithubSettings close={closeSettings} />

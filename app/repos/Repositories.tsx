@@ -22,7 +22,7 @@ const getHeaders = () => {
         {
             name: 'visibility',
             label: 'Visibility',
-            type: ColumnType.MULTIVALE
+            type: ColumnType.MULTIVALUE
         },
         {
             name: 'owner',

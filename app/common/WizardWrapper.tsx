@@ -23,7 +23,7 @@ function WizardHeader({ steps }: { steps: Array<WizardStep> }) {
     return (
         <div className='flex flex-row'>
             {steps.map((step: WizardStep) => {
-                return <div key={step.name} className='bg-dark-accent hover:bg-dark-accent-highlight p-4 rounded ml-2 gap-2 font-semi-bold flex w-[30rem] text-center'>
+                return <div key={step.name} className='bg-dark-accent h-fit hover:bg-dark-accent-highlight p-4 rounded ml-2 gap-2 font-semi-bold flex w-[30rem] text-center'>
                     <Image key={step.name} src="/checkbox-non.svg" alt="Completed" width={20} height={20} />
                     {`${step.name}`}
                 </div>

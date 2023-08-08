@@ -54,7 +54,7 @@ export enum ColumnType {
     TEXT = "text",
     NUMBER = "number",
     DATE = "date",
-    MULTIVALE = "multivalue"
+    MULTIVALUE = "multivalue"
 }
 
 export type StoreType = {
