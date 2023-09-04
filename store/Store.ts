@@ -11,4 +11,7 @@ export const useStore = create<StoreType>((set) => ({
     persistence: [],
     security: [],
     token: '',
+    loading:false,
+    error:null,
+    infoMessage:null
 }));

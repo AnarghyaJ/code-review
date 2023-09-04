@@ -2,6 +2,7 @@
 import React, { use, useEffect } from 'react'
 import Image from 'next/image';
 import { InputProps } from '../../types/ModuleTypes';
+import Icon from './Icon';
 
 
 export default function Input(props: InputProps) {
@@ -27,13 +28,8 @@ export default function Input(props: InputProps) {
                     readOnly={readOnly}
                     className={`text-input px-2 m-2 rounded-sm text-dark-surface w-60 ${style}`}
                 />
-                {clearable && <div className="inline-block active:scale-150 ml-3">
-                    <Image src='/delete.svg'
-                        alt='clear'
-                        width={20}
-                        height={20}
-                        className={`inline-block`}
-                        onClick={() => onChange('')}
+                {clearable && <div className="inline-block active:scale-150 ml-3 cursor-pointer align-middle">
+                    <Icon name='delete' onClick={() => onChange('')}
                     />
                 </div>}
             </label>

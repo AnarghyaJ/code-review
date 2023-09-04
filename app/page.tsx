@@ -9,8 +9,8 @@ async function codeCompletion() {
 }
 
 export default async function Home() {
-  const { settings, languages, persistence, security, buildEnvironMent, theme, token, selectedPage } = useStore.getState();
-  const copy = _.cloneDeep({ settings, languages, persistence, security, buildEnvironMent, theme, token, selectedPage });
+  const { settings, languages, persistence, security, buildEnvironMent, theme, token, selectedPage, error, infoMessage, loading } = useStore.getState();
+  const copy = _.cloneDeep({ settings, languages, persistence, security, buildEnvironMent, theme, token, selectedPage, error, infoMessage, loading });
   return (
     <main>
       <StoreInitializer {...copy} />

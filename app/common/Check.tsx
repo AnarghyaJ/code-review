@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import React from 'react'
 import Tooltip from './Tooltip';
+import Icon from './Icon';
 type CheckProps = {
     style?: string;
     tooltip?: string;
@@ -11,12 +12,8 @@ type CheckProps = {
 export default function Check(props: CheckProps) {
     const { style, tooltip, onClick } = props
     const check: React.ReactElement =
-        <div className={`flex items-center hover:cursor-pointer active:scale-150 ${style}`}><Image src='/check.svg'
-            alt='Check'
-            width={20}
-            height={20}
-            onClick={() => onClick()}
-        />
+        <div className={`flex items-center hover:cursor-pointer active:scale-150 ${style}`}>
+            <Icon name='check' onClick={onClick} />
         </div>
     return (
         tooltip ?

@@ -1,36 +1,33 @@
 "use client";
-import React, { useEffect } from 'react'
-import { Octokit, App } from "octokit";
-import { Constants } from '../../utils/Constants';
-import UserDetails from '../repos/UserDetails';
+import { Octokit } from "octokit";
+import React from 'react';
 import { useStore } from '../../store/Store';
-import Repositories from '../repos/Repositories';
-import { useWizard } from 'react-use-wizard';
 import Loader from '../common/Loader';
-
+import Repositories from '../repos/Repositories';
+import UserDetails from '../repos/UserDetails';
 export default function SelectRepo() {
     const [user, setUser] = React.useState<string>('')
     const [repositories, setRepositories] = React.useState<any>([])
-    const [error, setError] = React.useState<string>('');
     const [loading, setLoading] = React.useState<boolean>(false);
     const token = useStore((state) => state.token);
-
+    const { error } = useStore()
     React.useEffect(() => {
         getDetails();
     }, [token])
 
     const getDetails = async () => {
         setLoading(true);
-        setError('')
+        useStore.setState({ error: null });
         try {
             if (!token || token === '') {
-                setError('Please set a valid token!');
+                useStore.setState({ error: 'Please set a valid token!' })
+                setLoading(false);
                 return;
             }
             const octokit = new Octokit({ auth: token });
             const authResponse = await octokit.rest.users.getAuthenticated();
             if (authResponse.status !== 200) {
-                setError('Invalid token');
+                useStore.setState({ error: 'Invalid Token!' })
                 return;
             }
             setUser(authResponse.data.login);
@@ -49,7 +46,7 @@ export default function SelectRepo() {
             }
         } catch (error) {
             console.error(error);
-            setError('Please Check if the the token is set and is valid!')
+            useStore.setState({ error: 'Invalid Token!' })
         }
         setLoading(false);
     }
@@ -57,7 +54,6 @@ export default function SelectRepo() {
     return (
         <div className="">
             {loading && <Loader />}
-            {error && <div className='bg-error-color p-4 rounded m-4 w-max'><span className=" text-dark-secondary">{error}</span></div>}
             {user.length > 0 && <UserDetails user={user} />}
             {error ? <></> : <Repositories repositories={repositories} />}
         </div>

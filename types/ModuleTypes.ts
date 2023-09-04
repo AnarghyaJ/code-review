@@ -66,7 +66,12 @@ export type StoreType = {
     selectedPage: string,
     security: [],
     token: string,
+    loading: boolean,
+    error: any,
+    infoMessage: any
 }
+
+export type page = 'home'|'reviews'
 
 export type WizardStep = {
     name: string;
