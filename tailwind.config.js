@@ -1,74 +1,76 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+	],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       colors: {
-        "dark-surface": "var(--dark-surface)",
-        "dark-on-surface": "var(--dark-on-surface)",
-        "dark-primary": "var(--dark-primary)",
-        "dark-accent": "var(--dark-accent)",
-        "dark-secondary": "var(--dark-secondary)",
-        "background-start": "var(--background-start)",
-        "background-end": "var(--background-end)",
-        "primary-accent": "var(--primary-accent)",
-        "dark-accent-highlight": "var(--dark-accent-highlight)",
-        "error-color": "var(--error-color)",
-        "secondary-accent": "var(--secondary-accent)",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
       },
-      transitionProperty: {
-        width: 'width',
-        spacing: 'margin, padding',
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        'slide-in': {
-          '0%': {
-            transform: 'translateX(33vw)',
-          },
-          '100%': {
-            transform: 'translateX(0vw)',
-          },
+        "accordion-down": {
+          from: { height: 0 },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
-        'slide-out': {
-          '0%': {
-            opacity: '1',
-            transform: 'translateX(0vw)',
-          },
-          '100%': {
-            opacity: '0',
-            transform: 'translateX(33vw)',
-          },
-        },
-
-        'slide-fwd': {
-          '0%': {
-            '-webkit-transform': 'translateZ(0px)',
-            transform: 'translateZ(0px)',
-          },
-          '100%': {
-            '-webkit-transform': 'translateZ(160px)',
-            transform: 'translateZ(160px)',
-          },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: 0 },
         },
       },
       animation: {
-        'slide-in': 'slide-in 0.3s ease-out',
-        'slide-fwd': 'slide-fwd 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
-        'slide-out': 'slide-out 0.3s ease-out',
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
-      fontFamily: {
-        'sans': ['Roboto', 'sans-serif'],
-      }
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 }
